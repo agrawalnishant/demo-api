@@ -4,7 +4,7 @@
 name: Java CI with Maven
 
 env:
-  randomver: $(date +%s)
+  randomver: date +%s
 
 on:
   push:
