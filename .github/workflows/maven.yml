@@ -27,4 +27,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag demoapi:1.0
     - name: Push Docker Image
-      run: docker push demoapi:1.0
+      run: docker push rootnishi/demo-api:demoapi:1.0
