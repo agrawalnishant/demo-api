@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      date-sec: $(date +%s)
+      datesec: $(date +%s)
 
     steps:
     - uses: actions/checkout@v2
@@ -26,6 +26,6 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker.pkg.github.com/rootnishi/demo-api/dempapi:$date-sec
+      run: docker build . --file Dockerfile --tag docker.pkg.github.com/rootnishi/demo-api/dempapi:$datesec
     - name: Push Docker Image
-      run: docker push docker.pkg.github.com/rootnishi/demo-api/dempapi:$date-sec
+      run: docker push docker.pkg.github.com/rootnishi/demo-api/dempapi:$datesec
