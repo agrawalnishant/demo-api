@@ -23,4 +23,6 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag dempapi:$(date +%s)
+      run: docker build . --file Dockerfile --tag docker.pkg.github.com/rootnishi/demo-api/dempapi:$(date +%s)
+    - name: Push Docker Image
+      run: docker push docker.pkg.github.com/rootnishi/demo-api/dempapi:$(date +%s)
