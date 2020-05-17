@@ -14,6 +14,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      date-sec: $(date +%s)
+
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 1.13
@@ -23,6 +26,6 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag docker.pkg.github.com/rootnishi/demo-api/dempapi:$(date +%s)
+      run: docker build . --file Dockerfile --tag docker.pkg.github.com/rootnishi/demo-api/dempapi:$date-sec
     - name: Push Docker Image
-      run: docker push docker.pkg.github.com/rootnishi/demo-api/dempapi:$(date +%s)
+      run: docker push docker.pkg.github.com/rootnishi/demo-api/dempapi:$date-sec
