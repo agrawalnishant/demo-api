@@ -25,6 +25,6 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag demoapi:1.0
+      run: docker build . --file Dockerfile --tag 123
     - name: Push Docker Image
-      run: docker push docker.io/rootnishi/demo-api/demoapi:1.0
+      run: docker push docker.io/rootnishi/demo-api/demoapi:123
