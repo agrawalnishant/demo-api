@@ -24,6 +24,8 @@ jobs:
         java-version: 1.13
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Docker Version
+      run: docker b--version
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag demoapi:1.0
     - name: Push Docker Image
